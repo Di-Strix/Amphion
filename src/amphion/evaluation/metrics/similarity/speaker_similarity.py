@@ -12,8 +12,8 @@ import torch.nn.functional as F
 from tqdm import tqdm
 import librosa
 
-from evaluation.metrics.similarity.models.RawNetModel import RawNet3
-from evaluation.metrics.similarity.models.RawNetBasicBlock import Bottle2neck
+from amphion.evaluation.metrics.similarity.models.RawNetModel import RawNet3
+from amphion.evaluation.metrics.similarity.models.RawNetBasicBlock import Bottle2neck
 
 from transformers import Wav2Vec2FeatureExtractor, WavLMForXVector
 from resemblyzer import VoiceEncoder, preprocess_wav

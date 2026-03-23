@@ -4,12 +4,12 @@
 # LICENSE file in the root directory of this source tree.
 
 import re
-from utils.g2p.japanese import japanese_to_ipa
-from utils.g2p.mandarin import chinese_to_ipa
-from utils.g2p.english import english_to_ipa
-from utils.g2p.french import french_to_ipa
-from utils.g2p.korean import korean_to_ipa
-from utils.g2p.german import german_to_ipa
+from amphion.utils.g2p.japanese import japanese_to_ipa
+from amphion.utils.g2p.mandarin import chinese_to_ipa
+from amphion.utils.g2p.english import english_to_ipa
+from amphion.utils.g2p.french import french_to_ipa
+from amphion.utils.g2p.korean import korean_to_ipa
+from amphion.utils.g2p.german import german_to_ipa
 
 patterns = [
     r"\[EN\](.*?)\[EN\]",

@@ -24,14 +24,14 @@ from typing import Tuple, List, Optional
 
 import torch
 
-from modules.wenet_extractor.transformer.attention import MultiHeadedAttention
-from modules.wenet_extractor.transformer.decoder_layer import DecoderLayer
-from modules.wenet_extractor.transformer.embedding import PositionalEncoding
-from modules.wenet_extractor.transformer.embedding import NoPositionalEncoding
-from modules.wenet_extractor.transformer.positionwise_feed_forward import (
+from amphion.modules.wenet_extractor.transformer.attention import MultiHeadedAttention
+from amphion.modules.wenet_extractor.transformer.decoder_layer import DecoderLayer
+from amphion.modules.wenet_extractor.transformer.embedding import PositionalEncoding
+from amphion.modules.wenet_extractor.transformer.embedding import NoPositionalEncoding
+from amphion.modules.wenet_extractor.transformer.positionwise_feed_forward import (
     PositionwiseFeedForward,
 )
-from modules.wenet_extractor.utils.mask import subsequent_mask, make_pad_mask
+from amphion.modules.wenet_extractor.utils.mask import subsequent_mask, make_pad_mask
 
 
 class TransformerDecoder(torch.nn.Module):

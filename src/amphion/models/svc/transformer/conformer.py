@@ -7,7 +7,7 @@ import math
 import torch
 import numpy as np
 import torch.nn as nn
-from utils.util import convert_pad_shape
+from amphion.utils.util import convert_pad_shape
 
 
 class BaseModule(torch.nn.Module):

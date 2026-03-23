@@ -9,7 +9,7 @@ import random
 import time
 import torch
 import numpy as np
-from utils.util import Logger, ValueWindow
+from amphion.utils.util import Logger, ValueWindow
 from torch.utils.data import DataLoader
 
 import torch.nn.functional as F
@@ -18,7 +18,7 @@ from transformers import get_inverse_sqrt_schedule, get_constant_schedule
 import accelerate
 from accelerate.utils import ProjectConfiguration
 
-from models.base.base_sampler import VariableSampler
+from amphion.models.base.base_sampler import VariableSampler
 
 
 def _is_batch_full(batch, num_tokens, max_tokens, max_sentences):

@@ -5,11 +5,11 @@
 
 import torch
 
-from models.svc.base import SVCTrainer
-from modules.encoder.condition_encoder import ConditionEncoder
-from models.svc.transformer.transformer import Transformer
-from models.svc.transformer.conformer import Conformer
-from utils.ssim import SSIM
+from amphion.models.svc.base import SVCTrainer
+from amphion.modules.encoder.condition_encoder import ConditionEncoder
+from amphion.models.svc.transformer.transformer import Transformer
+from amphion.models.svc.transformer.conformer import Conformer
+from amphion.utils.ssim import SSIM
 
 
 class TransformerTrainer(SVCTrainer):

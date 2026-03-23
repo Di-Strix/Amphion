@@ -6,7 +6,7 @@
 import os
 from huggingface_hub import snapshot_download
 
-from models.vc.vevo.vevo_utils import *
+from amphion.models.vc.vevo.vevo_utils import *
 
 
 def vevo_tts(

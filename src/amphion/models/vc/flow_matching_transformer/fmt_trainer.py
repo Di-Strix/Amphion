@@ -9,11 +9,11 @@ import numpy as np
 import math
 import torch.nn.functional as F
 import torchaudio
-from models.base.base_trainer import BaseTrainer
-from models.vc.base.vc_emilia_dataset import VCEmiliaDataset, VCCollator
-from models.codec.melvqgan.melspec import MelSpectrogram
-from models.vc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
-from models.codec.kmeans.repcodec_model import RepCodec
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.vc.base.vc_emilia_dataset import VCEmiliaDataset, VCCollator
+from amphion.models.codec.melvqgan.melspec import MelSpectrogram
+from amphion.models.vc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
+from amphion.models.codec.kmeans.repcodec_model import RepCodec
 
 import safetensors
 

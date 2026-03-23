@@ -14,10 +14,10 @@ import pyworld as pw
 from multiprocessing import cpu_count
 
 
-from utils.util import load_config
-from preprocessors.processor import preprocess_dataset, prepare_align
-from preprocessors.metadata import cal_metadata
-from processors import acoustic_extractor, content_extractor, data_augment
+from amphion.utils.util import load_config
+from amphion.preprocessors.processor import preprocess_dataset, prepare_align
+from amphion.preprocessors.metadata import cal_metadata
+from amphion.processors import acoustic_extractor, content_extractor, data_augment
 
 
 def extract_acoustic_features(dataset, output_path, cfg, n_workers=1):

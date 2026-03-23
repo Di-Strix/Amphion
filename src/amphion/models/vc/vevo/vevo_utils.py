@@ -13,18 +13,18 @@ import numpy as np
 import yaml
 from IPython.display import display, Audio
 
-from models.vc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
-from models.vc.autoregressive_transformer.ar_model import AutoregressiveTransformer
-from models.codec.kmeans.repcodec_model import RepCodec
-from models.codec.vevo.vevo_repcodec import VevoRepCodec
-from models.codec.melvqgan.melspec import MelSpectrogram
-from models.codec.amphion_codec.vocos import Vocos
+from amphion.models.vc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
+from amphion.models.vc.autoregressive_transformer.ar_model import AutoregressiveTransformer
+from amphion.models.codec.kmeans.repcodec_model import RepCodec
+from amphion.models.codec.vevo.vevo_repcodec import VevoRepCodec
+from amphion.models.codec.melvqgan.melspec import MelSpectrogram
+from amphion.models.codec.amphion_codec.vocos import Vocos
 
-from utils.util import load_config
+from amphion.utils.util import load_config
 
 
 def g2p_(text, language):
-    from models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
+    from amphion.models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
 
     if language in ["zh", "en"]:
         return chn_eng_g2p(text)

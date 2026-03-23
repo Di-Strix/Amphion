@@ -4,13 +4,13 @@
 # LICENSE file in the root directory of this source tree.
 
 import torch
-from models.base.base_trainer import BaseTrainer
-from models.tta.autoencoder.autoencoder_dataset import (
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.tta.autoencoder.autoencoder_dataset import (
     AutoencoderKLDataset,
     AutoencoderKLCollator,
 )
-from models.tta.autoencoder.autoencoder import AutoencoderKL
-from models.tta.autoencoder.autoencoder_loss import AutoencoderLossWithDiscriminator
+from amphion.models.tta.autoencoder.autoencoder import AutoencoderKL
+from amphion.models.tta.autoencoder.autoencoder_loss import AutoencoderLossWithDiscriminator
 from torch.optim import Adam, AdamW
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 from torch.nn import MSELoss, L1Loss

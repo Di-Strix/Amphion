@@ -8,7 +8,7 @@ import math
 import torch
 import torch.nn as nn
 
-from modules.general.utils import Linear
+from amphion.modules.general.utils import Linear
 
 
 class PositionEncoder(nn.Module):

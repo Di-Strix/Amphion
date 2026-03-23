@@ -6,7 +6,7 @@
 #  from https://github.com/keithito/tacotron
 
 import sys
-import utils.g2p.cleaners
+import amphion.models.g2p.cleaners
 from tokenizers import Tokenizer
 import json
 import re

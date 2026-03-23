@@ -11,9 +11,9 @@ import math
 import torch.nn.functional as F
 
 
-from models.base.base_trainer import BaseTrainer
-from models.codec.coco.coco_dataset import CocoDataset, CocoCollator
-from models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent, CocoStyle
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.codec.coco.coco_dataset import CocoDataset, CocoCollator
+from amphion.models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent, CocoStyle
 
 import whisper
 import torchvision

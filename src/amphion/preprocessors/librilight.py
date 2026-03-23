@@ -10,14 +10,14 @@ import torchaudio
 import torch
 
 
-from utils.mfa_prepare import (
+from amphion.utils.mfa_prepare import (
     process_wav_files,
     get_wav_files,
     filter_wav_files_by_length,
 )
-from utils.cut_by_vad import cut_segments
-from utils.whisper_transcription import asr_main
-from utils.util import has_existed
+from amphion.utils.cut_by_vad import cut_segments
+from amphion.utils.whisper_transcription import asr_main
+from amphion.utils.util import has_existed
 
 import subprocess
 import random

@@ -9,12 +9,12 @@ import numpy as np
 from tqdm import tqdm
 import torch
 import json
-from models.tts.base.tts_inferece import TTSInference
-from models.tts.vits.vits_dataset import VITSTestDataset, VITSTestCollator
-from models.tts.vits.vits import SynthesizerTrn
-from processors.phone_extractor import phoneExtractor
-from text.text_token_collation import phoneIDCollation
-from utils.data_utils import *
+from amphion.models.tts.base.tts_inferece import TTSInference
+from amphion.models.tts.vits.vits_dataset import VITSTestDataset, VITSTestCollator
+from amphion.models.tts.vits.vits import SynthesizerTrn
+from amphion.processors.phone_extractor import phoneExtractor
+from amphion.text.text_token_collation import phoneIDCollation
+from amphion.utils.data_utils import *
 
 
 class VitsInference(TTSInference):

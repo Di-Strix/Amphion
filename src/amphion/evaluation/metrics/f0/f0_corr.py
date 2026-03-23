@@ -8,7 +8,7 @@ import librosa
 import numpy as np
 import parselmouth
 
-from utils.f0 import interpolate
+from amphion.utils.f0 import interpolate
 
 
 def get_cents(f0_hz):

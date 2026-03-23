@@ -25,7 +25,7 @@ except:
 
 import torch
 
-from utils.hparam import HParams
+from amphion.utils.hparam import HParams
 import logging
 from logging import handlers
 

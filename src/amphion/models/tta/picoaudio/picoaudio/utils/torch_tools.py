@@ -4,7 +4,7 @@ import random
 import itertools
 import numpy as np
 
-# from utils.mix import mix
+# from amphion.utils.mix import mix
 
 
 def normalize_wav(waveform):

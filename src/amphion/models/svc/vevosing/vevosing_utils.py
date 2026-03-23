@@ -23,18 +23,18 @@ import whisper
 from librosa.feature import chroma_stft
 from librosa.effects import pitch_shift
 
-from models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent, CocoStyle
-from models.svc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
-from models.svc.autoregressive_transformer.ar_model import AutoregressiveTransformer
-from models.codec.melvqgan.melspec import MelSpectrogram
-from models.codec.amphion_codec.vocos import Vocos
+from amphion.models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent, CocoStyle
+from amphion.models.svc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
+from amphion.models.svc.autoregressive_transformer.ar_model import AutoregressiveTransformer
+from amphion.models.codec.melvqgan.melspec import MelSpectrogram
+from amphion.models.codec.amphion_codec.vocos import Vocos
 
-from utils.util import load_config
-from evaluation.metrics.f0.f0_corr import extract_f0_hz
+from amphion.utils.util import load_config
+from amphion.evaluation.metrics.f0.f0_corr import extract_f0_hz
 
 
 def g2p_(text, language):
-    from models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
+    from amphion.models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
 
     if language in ["zh", "en"]:
         return chn_eng_g2p(text)

@@ -5,10 +5,10 @@
 
 import os
 
-from models.tts.metis.metis import Metis
+from amphion.models.tts.metis.metis import Metis
 
 from huggingface_hub import snapshot_download
-from utils.util import load_config
+from amphion.utils.util import load_config
 import soundfile as sf
 
 if __name__ == "__main__":

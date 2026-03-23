@@ -7,10 +7,10 @@ import random
 import torch
 import whisper
 
-from models.base.base_trainer import BaseTrainer
-from models.codec.coco.coco_dataset import CocoDataset, CocoCollator
-from models.svc.autoregressive_transformer.ar_model import AutoregressiveTransformer
-from models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent, CocoStyle
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.codec.coco.coco_dataset import CocoDataset, CocoCollator
+from amphion.models.svc.autoregressive_transformer.ar_model import AutoregressiveTransformer
+from amphion.models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent, CocoStyle
 
 import accelerate
 

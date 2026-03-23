@@ -16,28 +16,28 @@ from tqdm import tqdm
 from collections import defaultdict
 
 
-from evaluation.metrics.energy.energy_rmse import extract_energy_rmse
-from evaluation.metrics.energy.energy_pearson_coefficients import (
+from amphion.evaluation.metrics.energy.energy_rmse import extract_energy_rmse
+from amphion.evaluation.metrics.energy.energy_pearson_coefficients import (
     extract_energy_pearson_coeffcients,
 )
-from evaluation.metrics.f0.f0_pearson_coefficients import extract_fpc
-from evaluation.metrics.f0.f0_periodicity_rmse import extract_f0_periodicity_rmse
-from evaluation.metrics.f0.f0_rmse import extract_f0rmse
-from evaluation.metrics.f0.v_uv_f1 import extract_f1_v_uv
-from evaluation.metrics.intelligibility.character_error_rate import extract_cer
-from evaluation.metrics.intelligibility.word_error_rate import extract_wer
-from evaluation.metrics.similarity.speaker_similarity import extract_similarity
-from evaluation.metrics.spectrogram.frechet_distance import extract_fad
-from evaluation.metrics.spectrogram.mel_cepstral_distortion import extract_mcd
-from evaluation.metrics.spectrogram.multi_resolution_stft_distance import extract_mstft
-from evaluation.metrics.spectrogram.pesq import extract_pesq
-from evaluation.metrics.spectrogram.scale_invariant_signal_to_distortion_ratio import (
+from amphion.evaluation.metrics.f0.f0_pearson_coefficients import extract_fpc
+from amphion.evaluation.metrics.f0.f0_periodicity_rmse import extract_f0_periodicity_rmse
+from amphion.evaluation.metrics.f0.f0_rmse import extract_f0rmse
+from amphion.evaluation.metrics.f0.v_uv_f1 import extract_f1_v_uv
+from amphion.evaluation.metrics.intelligibility.character_error_rate import extract_cer
+from amphion.evaluation.metrics.intelligibility.word_error_rate import extract_wer
+from amphion.evaluation.metrics.similarity.speaker_similarity import extract_similarity
+from amphion.evaluation.metrics.spectrogram.frechet_distance import extract_fad
+from amphion.evaluation.metrics.spectrogram.mel_cepstral_distortion import extract_mcd
+from amphion.evaluation.metrics.spectrogram.multi_resolution_stft_distance import extract_mstft
+from amphion.evaluation.metrics.spectrogram.pesq import extract_pesq
+from amphion.evaluation.metrics.spectrogram.scale_invariant_signal_to_distortion_ratio import (
     extract_si_sdr,
 )
-from evaluation.metrics.spectrogram.scale_invariant_signal_to_noise_ratio import (
+from amphion.evaluation.metrics.spectrogram.scale_invariant_signal_to_noise_ratio import (
     extract_si_snr,
 )
-from evaluation.metrics.spectrogram.short_time_objective_intelligibility import (
+from amphion.evaluation.metrics.spectrogram.short_time_objective_intelligibility import (
     extract_stoi,
 )
 

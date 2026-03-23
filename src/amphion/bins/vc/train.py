@@ -6,14 +6,14 @@
 import argparse
 import torch
 
-from models.vc.flow_matching_transformer.fmt_trainer import (
+from amphion.models.vc.flow_matching_transformer.fmt_trainer import (
     FlowMatchingTransformerTrainer,
 )
-from models.vc.autoregressive_transformer.ar_trainer import (
+from amphion.models.vc.autoregressive_transformer.ar_trainer import (
     AutoregressiveTransformerTrainer,
 )
 
-from utils.util import load_config
+from amphion.utils.util import load_config
 
 
 def build_trainer(args, cfg):

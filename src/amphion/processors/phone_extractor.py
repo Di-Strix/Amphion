@@ -5,8 +5,8 @@
 
 import os
 from tqdm import tqdm
-from text.g2p_module import G2PModule, LexiconModule
-from text.symbol_table import SymbolTable
+from amphion.text.g2p_module import G2PModule, LexiconModule
+from amphion.text.symbol_table import SymbolTable
 
 """
     phoneExtractor: extract phone from text

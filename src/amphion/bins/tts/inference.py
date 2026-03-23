@@ -7,12 +7,12 @@ import argparse
 from argparse import ArgumentParser
 import os
 
-from models.tts.fastspeech2.fs2_inference import FastSpeech2Inference
-from models.tts.vits.vits_inference import VitsInference
-from models.tts.valle.valle_inference import VALLEInference
-from models.tts.naturalspeech2.ns2_inference import NS2Inference
-from models.tts.jets.jets_inference import JetsInference
-from utils.util import load_config
+from amphion.models.tts.fastspeech2.fs2_inference import FastSpeech2Inference
+from amphion.models.tts.vits.vits_inference import VitsInference
+from amphion.models.tts.valle.valle_inference import VALLEInference
+from amphion.models.tts.naturalspeech2.ns2_inference import NS2Inference
+from amphion.models.tts.jets.jets_inference import JetsInference
+from amphion.utils.util import load_config
 import torch
 
 

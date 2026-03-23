@@ -6,10 +6,10 @@
 import torch
 import torch.nn as nn
 from tqdm import tqdm
-from models.tts.base import TTSTrainer
-from models.tts.fastspeech2.fs2 import FastSpeech2, FastSpeech2Loss
-from models.tts.fastspeech2.fs2_dataset import FS2Dataset, FS2Collator
-from optimizer.optimizers import NoamLR
+from amphion.models.tts.base import TTSTrainer
+from amphion.models.tts.fastspeech2.fs2 import FastSpeech2, FastSpeech2Loss
+from amphion.models.tts.fastspeech2.fs2_dataset import FS2Dataset, FS2Collator
+from amphion.optimizer.optimizers import NoamLR
 
 
 class FastSpeech2Trainer(TTSTrainer):

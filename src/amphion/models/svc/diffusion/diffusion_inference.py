@@ -6,10 +6,10 @@
 import torch
 from diffusers import DDIMScheduler, DDPMScheduler, PNDMScheduler
 
-from models.svc.base import SVCInference
-from models.svc.diffusion.diffusion_inference_pipeline import DiffusionInferencePipeline
-from models.svc.diffusion.diffusion_wrapper import DiffusionWrapper
-from modules.encoder.condition_encoder import ConditionEncoder
+from amphion.models.svc.base import SVCInference
+from amphion.models.svc.diffusion.diffusion_inference_pipeline import DiffusionInferencePipeline
+from amphion.models.svc.diffusion.diffusion_wrapper import DiffusionWrapper
+from amphion.modules.encoder.condition_encoder import ConditionEncoder
 
 
 class DiffusionInference(SVCInference):

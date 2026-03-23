@@ -10,37 +10,37 @@ import time
 import torch
 import numpy as np
 import math
-from utils.util import Logger, ValueWindow
+from amphion.utils.util import Logger, ValueWindow
 from torch.utils.data import ConcatDataset, DataLoader
 
-from models.tts.base.tts_trainer import TTSTrainer
-from models.base.base_trainer import BaseTrainer
-from models.base.base_sampler import VariableSampler
+from amphion.models.tts.base.tts_trainer import TTSTrainer
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.base.base_sampler import VariableSampler
 from torch.utils.data.sampler import BatchSampler, SequentialSampler
 from torch.optim import Adam, AdamW
 from torch.nn import MSELoss, L1Loss
 import torch.nn.functional as F
-from models.codec.melvqgan.melspec import MelSpectrogram
+from amphion.models.codec.melvqgan.melspec import MelSpectrogram
 from transformers import get_inverse_sqrt_schedule, get_constant_schedule
 
 import accelerate
 from accelerate.logging import get_logger
 from accelerate.utils import ProjectConfiguration
 
-from models.codec.amphion_codec.vocos import Vocos
-from models.codec.amphion_codec.loss import (
+from amphion.models.codec.amphion_codec.vocos import Vocos
+from amphion.models.codec.amphion_codec.loss import (
     MultiResolutionSTFTLoss,
     MultiResolutionMelSpectrogramLoss,
     GANLoss,
 )
-from models.codec.discriminator.hifigan_disriminator import (
+from amphion.models.codec.discriminator.hifigan_disriminator import (
     HiFiGANMultiPeriodDiscriminator,
     SpecDiscriminator,
 )
 
 from itertools import chain
-from models.codec.coco.coco_dataset import CocoCollator
-from models.vocoders.vocos.vocos_dataset import VocosDataset
+from amphion.models.codec.coco.coco_dataset import CocoCollator
+from amphion.models.vocoders.vocos.vocos_dataset import VocosDataset
 
 
 def _is_batch_full(batch, num_tokens, max_tokens, max_sentences):

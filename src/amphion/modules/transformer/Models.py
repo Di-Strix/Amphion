@@ -8,7 +8,7 @@ import torch.nn as nn
 import numpy as np
 
 from .Layers import FFTBlock
-from text.symbols import symbols
+from amphion.text.symbols import symbols
 
 PAD = 0
 UNK = 1

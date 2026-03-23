@@ -7,7 +7,7 @@ import logging
 import numpy as np
 import random
 
-from models.codec.coco.coco_dataset import CocoDataset
+from amphion.models.codec.coco.coco_dataset import CocoDataset
 
 logger = logging.getLogger(__name__)
 

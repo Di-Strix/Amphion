@@ -10,22 +10,22 @@ import json5
 import torch
 import numpy as np
 from tqdm import tqdm
-from utils.util import ValueWindow
+from amphion.utils.util import ValueWindow
 from torch.utils.data import DataLoader
-from models.vc.Noro.noro_base_trainer import Noro_base_Trainer
+from amphion.models.vc.Noro.noro_base_trainer import Noro_base_Trainer
 from torch.nn import functional as F
-from models.base.base_sampler import VariableSampler
+from amphion.models.base.base_sampler import VariableSampler
 
 from diffusers import get_scheduler
 import accelerate
 from accelerate.logging import get_logger
 from accelerate.utils import ProjectConfiguration
-from models.vc.Noro.noro_model import Noro_VCmodel
-from models.vc.Noro.noro_dataset import VCCollator, VCDataset, batch_by_size
-from processors.content_extractor import HubertExtractor
-from models.vc.Noro.noro_loss import diff_loss, ConstractiveSpeakerLoss
-from utils.mel import mel_spectrogram_torch
-from utils.f0 import get_f0_features_using_dio, interpolate
+from amphion.models.vc.Noro.noro_model import Noro_VCmodel
+from amphion.models.vc.Noro.noro_dataset import VCCollator, VCDataset, batch_by_size
+from amphion.processors.content_extractor import HubertExtractor
+from amphion.models.vc.Noro.noro_loss import diff_loss, ConstractiveSpeakerLoss
+from amphion.utils.mel import mel_spectrogram_torch
+from amphion.utils.f0 import get_f0_features_using_dio, interpolate
 from torch.nn.utils.rnn import pad_sequence
 
 

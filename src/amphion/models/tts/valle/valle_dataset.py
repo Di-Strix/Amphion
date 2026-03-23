@@ -5,8 +5,8 @@
 
 import torch
 from torch.nn.utils.rnn import pad_sequence
-from utils.data_utils import *
-from models.tts.base.tts_dataset import (
+from amphion.utils.data_utils import *
+from amphion.models.tts.base.tts_dataset import (
     TTSDataset,
     TTSCollator,
     TTSTestDataset,
@@ -19,7 +19,7 @@ from torch.utils.data.sampler import (
     SequentialSampler,
 )
 
-from utils.tokenizer import tokenize_audio
+from amphion.utils.tokenizer import tokenize_audio
 
 
 class VALLEDataset(TTSDataset):

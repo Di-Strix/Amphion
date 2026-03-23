@@ -10,15 +10,15 @@ import torch
 import torch.nn as nn
 import numpy as np
 
-from models.base.new_trainer import BaseTrainer
-from models.svc.base.svc_dataset import (
+from amphion.models.base.new_trainer import BaseTrainer
+from amphion.models.svc.base.svc_dataset import (
     SVCOfflineCollator,
     SVCOfflineDataset,
     SVCOnlineCollator,
     SVCOnlineDataset,
 )
-from processors.audio_features_extractor import AudioFeaturesExtractor
-from processors.acoustic_extractor import cal_normalized_mel, load_mel_extrema
+from amphion.processors.audio_features_extractor import AudioFeaturesExtractor
+from amphion.processors.acoustic_extractor import cal_normalized_mel, load_mel_extrema
 
 EPS = 1.0e-12
 

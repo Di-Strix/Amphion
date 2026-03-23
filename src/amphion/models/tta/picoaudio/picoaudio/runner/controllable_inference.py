@@ -20,8 +20,8 @@ from diffusers import DDPMScheduler
 from datasets import load_dataset
 from torch.utils.data import Dataset, DataLoader
 
-import models.controllable_diffusion as ConDiffusion
-import models.controllable_dataset as ConDataset
+import amphion.models.controllable_diffusion as ConDiffusion
+import amphion.models.controllable_dataset as ConDataset
 from data.filter_data import get_event_list
 
 

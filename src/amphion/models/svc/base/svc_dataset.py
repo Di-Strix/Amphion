@@ -11,20 +11,20 @@ import os
 import numpy as np
 import librosa
 
-from utils.data_utils import *
-from processors.acoustic_extractor import cal_normalized_mel, load_mel_extrema
-from processors.content_extractor import (
+from amphion.utils.data_utils import *
+from amphion.processors.acoustic_extractor import cal_normalized_mel, load_mel_extrema
+from amphion.processors.content_extractor import (
     ContentvecExtractor,
     WhisperExtractor,
     WenetExtractor,
 )
-from models.base.base_dataset import (
+from amphion.models.base.base_dataset import (
     BaseOfflineDataset,
     BaseOfflineCollator,
     BaseOnlineDataset,
     BaseOnlineCollator,
 )
-from models.base.new_dataset import BaseTestDataset
+from amphion.models.base.new_dataset import BaseTestDataset
 
 EPS = 1.0e-12
 

@@ -9,12 +9,12 @@ from torch.optim.lr_scheduler import ExponentialLR
 
 from tqdm import tqdm
 
-from utils.util import *
-from utils.mel import mel_spectrogram_torch
-from models.tts.base import TTSTrainer
-from models.tts.vits.vits import SynthesizerTrn
-from models.tts.vits.vits_dataset import VITSDataset, VITSCollator
-from models.vocoders.gan.discriminator.mpd import (
+from amphion.utils.util import *
+from amphion.utils.mel import mel_spectrogram_torch
+from amphion.models.tts.base import TTSTrainer
+from amphion.models.tts.vits.vits import SynthesizerTrn
+from amphion.models.tts.vits.vits_dataset import VITSDataset, VITSCollator
+from amphion.models.vocoders.gan.discriminator.mpd import (
     MultiPeriodDiscriminator_vits as MultiPeriodDiscriminator,
 )
 

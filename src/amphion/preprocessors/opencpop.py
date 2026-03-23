@@ -8,7 +8,7 @@ from tqdm import tqdm
 import os
 import librosa
 
-from utils.util import has_existed
+from amphion.utils.util import has_existed
 
 
 def get_lines(file):

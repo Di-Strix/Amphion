@@ -7,18 +7,18 @@ import argparse
 
 import torch
 
-from models.svc.diffusion.diffusion_trainer import DiffusionTrainer
-from models.svc.comosvc.comosvc_trainer import ComoSVCTrainer
-from models.svc.transformer.transformer_trainer import TransformerTrainer
-from models.svc.vits.vits_trainer import VitsSVCTrainer
-from models.svc.flow_matching_transformer.fmt_trainer import (
+from amphion.models.svc.diffusion.diffusion_trainer import DiffusionTrainer
+from amphion.models.svc.comosvc.comosvc_trainer import ComoSVCTrainer
+from amphion.models.svc.transformer.transformer_trainer import TransformerTrainer
+from amphion.models.svc.vits.vits_trainer import VitsSVCTrainer
+from amphion.models.svc.flow_matching_transformer.fmt_trainer import (
     FlowMatchingTransformerTrainer,
 )
-from models.svc.autoregressive_transformer.ar_trainer import (
+from amphion.models.svc.autoregressive_transformer.ar_trainer import (
     AutoregressiveTransformerTrainer,
 )
 
-from utils.util import load_config
+from amphion.utils.util import load_config
 
 
 def build_trainer(args, cfg):

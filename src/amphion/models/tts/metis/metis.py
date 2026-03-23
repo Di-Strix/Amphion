@@ -11,9 +11,9 @@ import torch.nn.functional as F
 import safetensors
 import librosa
 
-from models.tts.metis.audio_tokenizer import AudioTokenizer
-from models.tts.maskgct.maskgct_utils import build_t2s_model, build_s2a_model, g2p_
-from models.tts.metis.metis_model import MetisStage1
+from amphion.models.tts.metis.audio_tokenizer import AudioTokenizer
+from amphion.models.tts.maskgct.maskgct_utils import build_t2s_model, build_s2a_model, g2p_
+from amphion.models.tts.metis.metis_model import MetisStage1
 from peft import LoraModel, LoraConfig
 
 from huggingface_hub import hf_hub_download, snapshot_download
@@ -161,7 +161,7 @@ def extract_adapter_weights(model):
 
 
 def bulid_visual_encoder(cfg, device):
-    from models.tts.metis.vis_encoder import InferencePipeline
+    from amphion.models.tts.metis.vis_encoder import InferencePipeline
 
     visual_encoder = InferencePipeline(
         "video", cfg.vis_model_path, cfg.vis_model_conf, face_track=True, device=device

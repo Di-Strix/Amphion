@@ -6,7 +6,7 @@
 import torch
 import torch.nn as nn
 import math
-from models.vc.flow_matching_transformer.llama_nar import DiffLlama
+from amphion.models.vc.flow_matching_transformer.llama_nar import DiffLlama
 import torch.nn.functional as F
 
 

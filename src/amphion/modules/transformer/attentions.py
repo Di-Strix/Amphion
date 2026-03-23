@@ -8,9 +8,9 @@ import torch
 from torch import nn
 from torch.nn import functional as F
 
-from utils.util import *
-from modules.base.base_module import *
-from modules.base.base_module import LayerNorm
+from amphion.utils.util import *
+from amphion.modules.base.base_module import *
+from amphion.modules.base.base_module import LayerNorm
 
 
 class Encoder(nn.Module):

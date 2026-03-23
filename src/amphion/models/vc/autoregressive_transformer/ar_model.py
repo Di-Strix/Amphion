@@ -8,7 +8,7 @@ import torch
 import torch.nn.functional as F
 import torch.nn as nn
 
-from models.vc.autoregressive_transformer.global_encoder import GlobalEncoder
+from amphion.models.vc.autoregressive_transformer.global_encoder import GlobalEncoder
 
 
 class AutoregressiveTransformer(nn.Module):
@@ -345,7 +345,7 @@ class AutoregressiveTransformer(nn.Module):
 
 
 if __name__ == "__main__":
-    from models.vc.vevo.vevo_utils import count_parameters
+    from amphion.models.vc.vevo.vevo_utils import count_parameters
 
     # # 740M
     # model = AutoregressiveTransformer(

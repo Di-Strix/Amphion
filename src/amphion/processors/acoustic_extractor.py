@@ -10,15 +10,15 @@ import numpy as np
 import json
 from tqdm import tqdm
 from sklearn.preprocessing import StandardScaler
-from utils.io import save_feature, save_txt, save_torch_audio
-from utils.util import has_existed
-from utils.tokenizer import extract_encodec_token
-from utils.stft import TacotronSTFT
-from utils.dsp import compress, audio_to_label
-from utils.data_utils import remove_outlier
-from preprocessors.metadata import replace_augment_name
+from amphion.utils.io import save_feature, save_txt, save_torch_audio
+from amphion.utils.util import has_existed
+from amphion.utils.tokenizer import extract_encodec_token
+from amphion.utils.stft import TacotronSTFT
+from amphion.utils.dsp import compress, audio_to_label
+from amphion.utils.data_utils import remove_outlier
+from amphion.preprocessors.metadata import replace_augment_name
 from scipy.interpolate import interp1d
-from utils.mel import (
+from amphion.utils.mel import (
     extract_mel_features,
     extract_linear_features,
     extract_mel_features_tts,
@@ -263,7 +263,7 @@ def extract_utt_acoustic_features_tts(dataset_output, cfg, utt):
             wav_torch = torch.from_numpy(wav).to(wav_torch.device)
 
         if cfg.preprocess.extract_linear_spec:
-            from utils.mel import extract_linear_features
+            from amphion.utils.mel import extract_linear_features
 
             linear = extract_linear_features(wav_torch.unsqueeze(0), cfg.preprocess)
             save_feature(
@@ -271,7 +271,7 @@ def extract_utt_acoustic_features_tts(dataset_output, cfg, utt):
             )
 
         if cfg.preprocess.extract_mel:
-            from utils.mel import extract_mel_features
+            from amphion.utils.mel import extract_mel_features
 
             if cfg.preprocess.mel_extract_mode == "taco":
                 _stft = TacotronSTFT(
@@ -395,7 +395,7 @@ def extract_utt_acoustic_features_vocoder(dataset_output, cfg, utt):
 
         # extract features
         if cfg.preprocess.extract_mel:
-            from utils.mel import extract_mel_features
+            from amphion.utils.mel import extract_mel_features
 
             mel = extract_mel_features(wav_torch.unsqueeze(0), cfg.preprocess)
             save_feature(dataset_output, cfg.preprocess.mel_dir, uid, mel.cpu().numpy())
@@ -426,7 +426,7 @@ def extract_utt_acoustic_features_vocoder(dataset_output, cfg, utt):
                 save_feature(dataset_output, cfg.preprocess.uv_dir, uid, uv)
 
         if cfg.preprocess.extract_amplitude_phase:
-            from utils.mel import amplitude_phase_spectrum
+            from amphion.utils.mel import amplitude_phase_spectrum
 
             log_amplitude, phase, real, imaginary = amplitude_phase_spectrum(
                 wav_torch.unsqueeze(0), cfg.preprocess

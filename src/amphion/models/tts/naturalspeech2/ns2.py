@@ -7,11 +7,11 @@ import torch
 import torch.nn as nn
 import numpy as np
 import torch.nn.functional as F
-from models.tts.naturalspeech2.diffusion import Diffusion
-from models.tts.naturalspeech2.diffusion_flow import DiffusionFlow
-from models.tts.naturalspeech2.wavenet import WaveNet
-from models.tts.naturalspeech2.prior_encoder import PriorEncoder
-from modules.naturalpseech2.transformers import TransformerEncoder
+from amphion.models.tts.naturalspeech2.diffusion import Diffusion
+from amphion.models.tts.naturalspeech2.diffusion_flow import DiffusionFlow
+from amphion.models.tts.naturalspeech2.wavenet import WaveNet
+from amphion.models.tts.naturalspeech2.prior_encoder import PriorEncoder
+from amphion.modules.naturalpseech2.transformers import TransformerEncoder
 from encodec import EncodecModel
 from einops import rearrange, repeat
 

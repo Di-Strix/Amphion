@@ -8,11 +8,11 @@ import numpy as np
 import yaml
 import torchaudio
 
-from models.vc.base.vc_emilia_dataset import VCEmiliaDataset, VCCollator
-from models.codec.kmeans.repcodec_model import RepCodec
-from models.codec.vevo.vevo_repcodec import VevoRepCodec
+from amphion.models.vc.base.vc_emilia_dataset import VCEmiliaDataset, VCCollator
+from amphion.models.codec.kmeans.repcodec_model import RepCodec
+from amphion.models.codec.vevo.vevo_repcodec import VevoRepCodec
 
-from models.base.base_trainer import BaseTrainer
+from amphion.models.base.base_trainer import BaseTrainer
 
 
 class VQVAETrainer(BaseTrainer):

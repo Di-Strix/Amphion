@@ -25,9 +25,9 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from modules.wenet_extractor.transformer.subsampling import BaseSubsampling
+from amphion.modules.wenet_extractor.transformer.subsampling import BaseSubsampling
 from typing import Tuple
-from modules.wenet_extractor.squeezeformer.conv2d import Conv2dValid
+from amphion.modules.wenet_extractor.squeezeformer.conv2d import Conv2dValid
 
 
 class DepthwiseConv2dSubsampling4(BaseSubsampling):

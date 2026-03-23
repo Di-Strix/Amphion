@@ -10,7 +10,7 @@ from tqdm import tqdm
 from glob import glob
 from collections import defaultdict
 
-from utils.util import has_existed
+from amphion.utils.util import has_existed
 
 
 def libritts_statistics(data_dir):

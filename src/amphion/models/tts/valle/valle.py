@@ -12,14 +12,14 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchmetrics.classification import MulticlassAccuracy
-from utils.util import make_pad_mask
-from utils.topk_sampling import topk_sampling
-from modules.general import Transpose
-from modules.encoder import TokenEmbedding
-from modules.general import PromptedFeatures
-from modules.transformer import SinePositionalEmbedding
-from modules.norms import AdaptiveLayerNorm, LayerNorm
-from modules.transformer.transformer import TransformerEncoder, TransformerEncoderLayer
+from amphion.utils.util import make_pad_mask
+from amphion.utils.topk_sampling import topk_sampling
+from amphion.modules.general import Transpose
+from amphion.modules.encoder import TokenEmbedding
+from amphion.modules.general import PromptedFeatures
+from amphion.modules.transformer import SinePositionalEmbedding
+from amphion.modules.norms import AdaptiveLayerNorm, LayerNorm
+from amphion.modules.transformer.transformer import TransformerEncoder, TransformerEncoderLayer
 
 
 class VALLE(nn.Module):

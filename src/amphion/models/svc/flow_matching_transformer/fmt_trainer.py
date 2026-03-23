@@ -12,11 +12,11 @@ import numpy as np
 import accelerate
 
 import whisper
-from models.base.base_trainer import BaseTrainer
-from models.codec.coco.coco_dataset import CocoDataset, CocoCollator
-from models.svc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
-from models.codec.melvqgan.melspec import MelSpectrogram
-from models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.codec.coco.coco_dataset import CocoDataset, CocoCollator
+from amphion.models.svc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
+from amphion.models.codec.melvqgan.melspec import MelSpectrogram
+from amphion.models.codec.coco.rep_coco_model import CocoContentStyle, CocoContent
 
 
 class FlowMatchingTransformerTrainer(BaseTrainer):

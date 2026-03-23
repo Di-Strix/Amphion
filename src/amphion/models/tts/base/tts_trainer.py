@@ -19,9 +19,9 @@ from accelerate.logging import get_logger
 from accelerate.utils import ProjectConfiguration
 from torch.utils.data import ConcatDataset, DataLoader
 from accelerate import DistributedDataParallelKwargs
-from schedulers.scheduler import Eden
-from models.base.base_sampler import build_samplers
-from models.base.new_trainer import BaseTrainer
+from amphion.schedulers.scheduler import Eden
+from amphion.models.base.base_sampler import build_samplers
+from amphion.models.base.new_trainer import BaseTrainer
 
 
 class TTSTrainer(BaseTrainer):

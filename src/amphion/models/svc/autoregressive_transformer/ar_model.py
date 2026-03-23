@@ -382,7 +382,7 @@ class AutoregressiveTransformer(nn.Module):
 
 
 if __name__ == "__main__":
-    from models.vc.vevo.vevo_utils import count_parameters
+    from amphion.models.vc.vevo.vevo_utils import count_parameters
 
     # 778M
     model = AutoregressiveTransformer(

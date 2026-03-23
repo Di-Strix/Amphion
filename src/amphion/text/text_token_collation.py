@@ -8,8 +8,8 @@ from typing import List, Tuple
 import os
 import numpy as np
 import torch
-from text.symbol_table import SymbolTable
-from text import text_to_sequence
+from amphion.text.symbol_table import SymbolTable
+from amphion.text import text_to_sequence
 
 
 """

@@ -27,11 +27,11 @@ import torch
 import torch.nn.functional as F
 from torch.nn.utils.rnn import pad_sequence
 
-from modules.wenet_extractor.transformer.ctc import CTC
-from modules.wenet_extractor.transformer.decoder import TransformerDecoder
-from modules.wenet_extractor.transformer.encoder import TransformerEncoder
-from modules.wenet_extractor.transformer.label_smoothing_loss import LabelSmoothingLoss
-from modules.wenet_extractor.utils.common import (
+from amphion.modules.wenet_extractor.transformer.ctc import CTC
+from amphion.modules.wenet_extractor.transformer.decoder import TransformerDecoder
+from amphion.modules.wenet_extractor.transformer.encoder import TransformerEncoder
+from amphion.modules.wenet_extractor.transformer.label_smoothing_loss import LabelSmoothingLoss
+from amphion.modules.wenet_extractor.utils.common import (
     IGNORE_ID,
     add_sos_eos,
     log_add,
@@ -39,7 +39,7 @@ from modules.wenet_extractor.utils.common import (
     th_accuracy,
     reverse_pad_list,
 )
-from modules.wenet_extractor.utils.mask import (
+from amphion.modules.wenet_extractor.utils.mask import (
     make_pad_mask,
     mask_finished_preds,
     mask_finished_scores,

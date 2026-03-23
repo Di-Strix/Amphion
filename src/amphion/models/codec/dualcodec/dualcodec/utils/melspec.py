@@ -123,7 +123,7 @@ class MelSpectrogram(nn.Module):
 #     mean = 0
 
 
-#     from utils.util import load_config
+#     from amphion.utils.util import load_config
 #     cfg = load_config("/storage/wyc/SpeechGeneration/egs/tts/SoundStorm/exp_config_16k_emilia_llama_new_semantic_repcodec_8192_1q_24k.json")
 #     print(cfg)
 #     dataset = SoundStormDataset(AK, SK, bucket_name, cfg=cfg)

@@ -11,7 +11,7 @@ from pathlib import Path
 import torch
 import accelerate
 from accelerate.logging import get_logger
-from models.base.new_trainer import BaseTrainer
+from amphion.models.base.new_trainer import BaseTrainer
 
 
 class Noro_base_Trainer(BaseTrainer):

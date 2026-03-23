@@ -21,9 +21,9 @@ from accelerate.logging import get_logger
 from accelerate.utils import set_seed
 
 import sys
-import utils.torch_tools as torch_tools
-import models.controllable_diffusion as ConDiffusion
-import models.controllable_dataset as ConDataset
+import amphion.models.torch_tools as torch_tools
+import amphion.models.controllable_diffusion as ConDiffusion
+import amphion.models.controllable_dataset as ConDataset
 from data.filter_data import get_event_list
 
 logger = get_logger(__name__)

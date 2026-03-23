@@ -281,7 +281,7 @@ class GlobalEncoder(LlamaModel):
 
 
 if __name__ == "__main__":
-    from models.vc.vevo.vevo_utils import count_parameters
+    from amphion.models.vc.vevo.vevo_utils import count_parameters
 
     global_encoder = GlobalEncoder(
         input_dim=128,  # such as the mel-spectrogram dimension

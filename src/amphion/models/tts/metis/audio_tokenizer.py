@@ -9,11 +9,11 @@ import numpy as np
 import librosa
 
 import safetensors
-from utils.util import load_config
+from amphion.utils.util import load_config
 
 from transformers import SeamlessM4TFeatureExtractor
 
-from models.tts.maskgct.maskgct_utils import (
+from amphion.models.tts.maskgct.maskgct_utils import (
     build_semantic_model,
     build_semantic_codec,
     build_acoustic_codec,

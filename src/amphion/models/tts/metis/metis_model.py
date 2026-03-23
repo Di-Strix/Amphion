@@ -8,7 +8,7 @@ import torch
 import torch.nn as nn
 from einops import rearrange
 
-from models.tts.maskgct.maskgct_t2s import (
+from amphion.models.tts.maskgct.maskgct_t2s import (
     gumbel_noise,
     gumbel_sample,
     top_k,

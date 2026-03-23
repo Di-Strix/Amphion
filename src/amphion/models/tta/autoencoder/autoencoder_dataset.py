@@ -6,8 +6,8 @@
 import random
 import torch
 from torch.nn.utils.rnn import pad_sequence
-from utils.data_utils import *
-from models.base.base_dataset import (
+from amphion.utils.data_utils import *
+from amphion.models.base.base_dataset import (
     BaseOfflineCollator,
     BaseOfflineDataset,
     BaseTestDataset,

@@ -132,7 +132,7 @@ if __name__ == "__main__":
     import argparse
     import sys
 
-    import models.controllable_dataset as ConDataset
+    import amphion.models.controllable_dataset as ConDataset
     from data_utils.filter_data import get_event_list
 
     parser = argparse.ArgumentParser(description=".")

@@ -9,7 +9,7 @@ import librosa
 import torch
 from torch.utils.data import Dataset
 from torch.nn.utils.rnn import pad_sequence
-from utils.data_utils import *
+from amphion.utils.data_utils import *
 from multiprocessing import Pool, Lock
 import random
 import torchaudio

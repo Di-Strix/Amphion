@@ -11,10 +11,10 @@ from glob import glob
 from collections import defaultdict
 
 
-from utils.io import save_audio
-from utils.util import has_existed
-from utils.audio_slicer import Slicer
-from preprocessors import GOLDEN_TEST_SAMPLES
+from amphion.utils.io import save_audio
+from amphion.utils.util import has_existed
+from amphion.utils.audio_slicer import Slicer
+from amphion.preprocessors import GOLDEN_TEST_SAMPLES
 
 
 def split_to_utterances(dataset_path, singer, style, output_dir):

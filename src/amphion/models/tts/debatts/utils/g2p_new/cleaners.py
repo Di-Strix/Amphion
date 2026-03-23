@@ -4,7 +4,7 @@
 # LICENSE file in the root directory of this source tree.
 
 import re
-from utils.g2p_new.mandarin import chinese_to_ipa
+from amphion.utils.g2p_new.mandarin import chinese_to_ipa
 
 
 def cjekfd_cleaners(text, language, text_tokenizers):

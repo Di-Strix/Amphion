@@ -19,15 +19,15 @@ import torch.nn.functional as F
 import joblib
 from einops import repeat
 
-from utils.io_optim import (
+from amphion.utils.io_optim import (
     TorchaudioDataset,
     LibrosaDataset,
     FFmpegDataset,
     collate_batch,
 )
 import whisper
-from modules.wenet_extractor.utils.init_model import init_model
-from modules.wenet_extractor.utils.checkpoint import load_checkpoint
+from amphion.modules.wenet_extractor.utils.init_model import init_model
+from amphion.modules.wenet_extractor.utils.checkpoint import load_checkpoint
 
 """
     Extractor for content features

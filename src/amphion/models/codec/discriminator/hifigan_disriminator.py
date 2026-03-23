@@ -4,7 +4,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchaudio.transforms import Resample
-from models.codec.discriminator.layers import (
+from amphion.models.codec.discriminator.layers import (
     NLayerDiscriminator,
     NLayerSpecDiscriminator,
 )

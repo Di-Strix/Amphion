@@ -8,16 +8,16 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 import librosa
-from utils.util import load_config
+from amphion.utils.util import load_config
 from tqdm import tqdm
 
-from models.codec.kmeans.repcodec_model import RepCodec
-from models.tts.maskgct.maskgct_s2a import MaskGCT_S2A
-from models.tts.maskgct.maskgct_t2s import MaskGCT_T2S
-from models.codec.amphion_codec.codec import CodecEncoder, CodecDecoder
+from amphion.models.codec.kmeans.repcodec_model import RepCodec
+from amphion.models.tts.maskgct.maskgct_s2a import MaskGCT_S2A
+from amphion.models.tts.maskgct.maskgct_t2s import MaskGCT_T2S
+from amphion.models.codec.amphion_codec.codec import CodecEncoder, CodecDecoder
 from transformers import Wav2Vec2BertModel
 
-from models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
+from amphion.models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
 
 from transformers import SeamlessM4TFeatureExtractor
 

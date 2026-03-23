@@ -11,9 +11,9 @@ import torch
 from torch import Tensor, nn
 from torch.nn import functional as F
 
-from modules.norms import AdaptiveLayerNorm, LayerNorm, BalancedBasicNorm, IdentityNorm
-from modules.transformer import MultiheadAttention
-from modules.general.scaling import BalancedDoubleSwish
+from amphion.modules.norms import AdaptiveLayerNorm, LayerNorm, BalancedBasicNorm, IdentityNorm
+from amphion.modules.transformer import MultiheadAttention
+from amphion.modules.general.scaling import BalancedDoubleSwish
 
 
 class TransformerEncoderLayer(nn.Module):

@@ -8,8 +8,8 @@ import os
 
 import torch
 
-from models.vocoders.vocoder_inference import VocoderInference
-from utils.util import load_config
+from amphion.models.vocoders.vocoder_inference import VocoderInference
+from amphion.utils.util import load_config
 
 
 def build_inference(args, cfg, infer_type="infer_from_dataset"):

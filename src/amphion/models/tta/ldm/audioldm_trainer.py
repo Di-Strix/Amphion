@@ -3,11 +3,11 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from models.base.base_trainer import BaseTrainer
+from amphion.models.base.base_trainer import BaseTrainer
 from diffusers import DDPMScheduler
-from models.tta.ldm.audioldm_dataset import AudioLDMDataset, AudioLDMCollator
-from models.tta.autoencoder.autoencoder import AutoencoderKL
-from models.tta.ldm.audioldm import AudioLDM, UNetModel
+from amphion.models.tta.ldm.audioldm_dataset import AudioLDMDataset, AudioLDMCollator
+from amphion.models.tta.autoencoder.autoencoder import AutoencoderKL
+from amphion.models.tta.ldm.audioldm import AudioLDM, UNetModel
 import torch
 import torch.nn as nn
 from torch.nn import MSELoss, L1Loss

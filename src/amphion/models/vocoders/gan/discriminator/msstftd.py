@@ -15,7 +15,7 @@ import torch
 from torch import nn
 from einops import rearrange
 
-from modules.vocoder_blocks import *
+from amphion.modules.vocoder_blocks import *
 
 
 FeatureMapType = tp.List[torch.Tensor]

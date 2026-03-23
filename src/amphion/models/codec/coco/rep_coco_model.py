@@ -10,8 +10,8 @@ import torch.nn as nn
 
 from torch.nn import functional as F
 
-from models.codec.amphion_codec.quantize import ResidualVQ
-from models.codec.amphion_codec.vocos import VocosBackbone
+from amphion.models.codec.amphion_codec.quantize import ResidualVQ
+from amphion.models.codec.amphion_codec.vocos import VocosBackbone
 
 
 def init_weights(m):
@@ -412,7 +412,7 @@ class CocoStyle(CocoContentStyle):
 
 
 # if __name__ == "__main__":
-#     from utils.util import JsonHParams
+#     from amphion.utils.util import JsonHParams
 
 #     cfg = JsonHParams(
 #         **{

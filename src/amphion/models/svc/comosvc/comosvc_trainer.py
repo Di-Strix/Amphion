@@ -10,9 +10,9 @@ from tqdm import tqdm
 import json
 import shutil
 
-from models.svc.base import SVCTrainer
-from modules.encoder.condition_encoder import ConditionEncoder
-from models.svc.comosvc.comosvc import ComoSVC
+from amphion.models.svc.base import SVCTrainer
+from amphion.modules.encoder.condition_encoder import ConditionEncoder
+from amphion.models.svc.comosvc.comosvc import ComoSVC
 
 
 class ComoSVCTrainer(SVCTrainer):

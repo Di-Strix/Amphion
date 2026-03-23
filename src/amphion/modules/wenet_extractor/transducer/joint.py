@@ -2,7 +2,7 @@ from typing import Optional
 
 import torch
 from torch import nn
-from modules.wenet_extractor.utils.common import get_activation
+from amphion.modules.wenet_extractor.utils.common import get_activation
 
 
 class TransducerJoint(torch.nn.Module):

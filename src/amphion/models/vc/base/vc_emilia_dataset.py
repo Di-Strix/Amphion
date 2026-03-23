@@ -9,7 +9,7 @@ import librosa
 import torch
 from torch.nn.utils.rnn import pad_sequence
 
-from models.base.emilia_dataset import EmiliaDataset, WarningFilter
+from amphion.models.base.emilia_dataset import EmiliaDataset, WarningFilter
 
 
 filter = WarningFilter()
@@ -46,7 +46,7 @@ class VCEmiliaDataset(EmiliaDataset):
             )
 
     def g2p(self, text, language):
-        from models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
+        from amphion.models.tts.maskgct.g2p.g2p_generation import g2p, chn_eng_g2p
 
         if language in ["zh", "en"]:
             return chn_eng_g2p(text)

@@ -9,12 +9,12 @@ import numpy as np
 import librosa
 from safetensors.torch import load_model
 import os
-from utils.util import load_config
-from models.vc.Noro.noro_trainer import NoroTrainer
-from models.vc.Noro.noro_model import Noro_VCmodel
-from processors.content_extractor import HubertExtractor
-from utils.mel import mel_spectrogram_torch
-from utils.f0 import get_f0_features_using_dio, interpolate
+from amphion.utils.util import load_config
+from amphion.models.vc.Noro.noro_trainer import NoroTrainer
+from amphion.models.vc.Noro.noro_model import Noro_VCmodel
+from amphion.processors.content_extractor import HubertExtractor
+from amphion.utils.mel import mel_spectrogram_torch
+from amphion.utils.f0 import get_f0_features_using_dio, interpolate
 from torch.nn.utils.rnn import pad_sequence
 
 

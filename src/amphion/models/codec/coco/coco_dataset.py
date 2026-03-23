@@ -13,8 +13,8 @@ import torch
 from torch.nn.utils.rnn import pad_sequence
 from librosa.feature import chroma_stft
 
-from utils.f0 import f0_to_coarse, interpolate
-from models.vc.base.vc_emilia_dataset import VCEmiliaDataset
+from amphion.utils.f0 import f0_to_coarse, interpolate
+from amphion.models.vc.base.vc_emilia_dataset import VCEmiliaDataset
 
 logger = logging.getLogger(__name__)
 

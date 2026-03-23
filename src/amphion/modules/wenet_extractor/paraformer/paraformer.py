@@ -24,14 +24,14 @@ from typing import Dict, Optional, Tuple
 
 import torch
 
-from modules.wenet_extractor.cif.predictor import MAELoss
-from modules.wenet_extractor.paraformer.search.beam_search import Hypothesis
-from modules.wenet_extractor.transformer.asr_model import ASRModel
-from modules.wenet_extractor.transformer.ctc import CTC
-from modules.wenet_extractor.transformer.decoder import TransformerDecoder
-from modules.wenet_extractor.transformer.encoder import TransformerEncoder
-from modules.wenet_extractor.utils.common import IGNORE_ID, add_sos_eos, th_accuracy
-from modules.wenet_extractor.utils.mask import make_pad_mask
+from amphion.modules.wenet_extractor.cif.predictor import MAELoss
+from amphion.modules.wenet_extractor.paraformer.search.beam_search import Hypothesis
+from amphion.modules.wenet_extractor.transformer.asr_model import ASRModel
+from amphion.modules.wenet_extractor.transformer.ctc import CTC
+from amphion.modules.wenet_extractor.transformer.decoder import TransformerDecoder
+from amphion.modules.wenet_extractor.transformer.encoder import TransformerEncoder
+from amphion.modules.wenet_extractor.utils.common import IGNORE_ID, add_sos_eos, th_accuracy
+from amphion.modules.wenet_extractor.utils.mask import make_pad_mask
 
 
 class Paraformer(ASRModel):

@@ -14,7 +14,7 @@ from diffusers.utils.torch_utils import randn_tensor
 from diffusers import DDPMScheduler, UNet2DConditionModel
 from diffusers import AutoencoderKL as DiffuserAutoencoderKL
 
-from utils.torch_tools import wav_to_fbank
+from amphion.utils.torch_tools import wav_to_fbank
 from audioldm.audio.stft import TacotronSTFT
 from audioldm.variational_autoencoder.autoencoder import AutoencoderKL
 from audioldm.utils import default_audioldm_config, get_metadata

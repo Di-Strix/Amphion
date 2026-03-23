@@ -19,7 +19,7 @@ os.chdir("./models/tts/debatts")
 import sys
 
 sys.path.append("./models/tts/debatts")
-from utils.topk_sampling import top_k_top_p_filtering
+from amphion.utils.topk_sampling import top_k_top_p_filtering
 import pickle
 
 

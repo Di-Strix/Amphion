@@ -17,10 +17,10 @@ import torch
 from accelerate.logging import get_logger
 from torch.utils.data import DataLoader
 
-from models.vocoders.vocoder_inference import synthesis
-from utils.io import save_audio
-from utils.util import load_config
-from utils.audio_slicer import is_silence
+from amphion.models.vocoders.vocoder_inference import synthesis
+from amphion.utils.io import save_audio
+from amphion.utils.util import load_config
+from amphion.utils.audio_slicer import is_silence
 
 EPS = 1.0e-12
 

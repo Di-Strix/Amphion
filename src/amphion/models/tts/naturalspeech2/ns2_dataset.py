@@ -6,17 +6,17 @@
 import random
 import torch
 from torch.nn.utils.rnn import pad_sequence
-from utils.data_utils import *
-from processors.acoustic_extractor import cal_normalized_mel
-from processors.acoustic_extractor import load_normalized
-from models.base.base_dataset import (
+from amphion.utils.data_utils import *
+from amphion.processors.acoustic_extractor import cal_normalized_mel
+from amphion.processors.acoustic_extractor import load_normalized
+from amphion.models.base.base_dataset import (
     BaseOfflineCollator,
     BaseOfflineDataset,
     BaseTestDataset,
     BaseTestCollator,
 )
-from text import text_to_sequence
-from text.cmudict import valid_symbols
+from amphion.text import text_to_sequence
+from amphion.text.cmudict import valid_symbols
 from tqdm import tqdm
 import pickle
 

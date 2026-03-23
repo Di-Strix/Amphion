@@ -9,8 +9,8 @@ import torch.nn as nn
 from torch.nn import Conv2d, Conv1d
 from torch.nn.utils import weight_norm, spectral_norm
 from torch import nn
-from modules.vocoder_blocks import *
-from models.vocoders.gan.discriminator.msd import MultiScaleDiscriminator_JETS
+from amphion.modules.vocoder_blocks import *
+from amphion.models.vocoders.gan.discriminator.msd import MultiScaleDiscriminator_JETS
 
 LRELU_SLOPE = 0.1
 

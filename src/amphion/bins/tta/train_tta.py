@@ -7,9 +7,9 @@ import argparse
 import os
 import torch
 
-from models.tta.autoencoder.autoencoder_trainer import AutoencoderKLTrainer
-from models.tta.ldm.audioldm_trainer import AudioLDMTrainer
-from utils.util import load_config
+from amphion.models.tta.autoencoder.autoencoder_trainer import AutoencoderKLTrainer
+from amphion.models.tta.ldm.audioldm_trainer import AudioLDMTrainer
+from amphion.utils.util import load_config
 
 
 def build_trainer(args, cfg):

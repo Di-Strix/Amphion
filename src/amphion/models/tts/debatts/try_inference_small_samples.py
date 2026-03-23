@@ -8,7 +8,7 @@ import os
 
 os.chdir("./models/tts/debatts")
 sys.path.append("./models/tts/debatts")
-from utils.g2p_new.g2p_new import new_g2p
+from amphion.utils.g2p_new.g2p_new import new_g2p
 
 from transformers import Wav2Vec2Model
 from cgitb import text
@@ -27,13 +27,13 @@ import json
 import accelerate
 from IPython.display import Audio
 
-from models.codec.kmeans.kmeans_model import KMeans, KMeansEMA
-from models.codec.kmeans.repcodec_model import RepCodec
-from models.tts.soundstorm.soundstorm_model import SoundStorm
-from models.codec.amphion_codec.codec import CodecEncoder, CodecDecoder
+from amphion.models.codec.kmeans.kmeans_model import KMeans, KMeansEMA
+from amphion.models.codec.kmeans.repcodec_model import RepCodec
+from amphion.models.tts.soundstorm.soundstorm_model import SoundStorm
+from amphion.models.codec.amphion_codec.codec import CodecEncoder, CodecDecoder
 from transformers import Wav2Vec2BertModel
 import safetensors
-from utils.util import load_config
+from amphion.utils.util import load_config
 from tqdm import tqdm
 
 from transformers import SeamlessM4TFeatureExtractor
@@ -42,9 +42,9 @@ processor = SeamlessM4TFeatureExtractor.from_pretrained("./ckpt/w2v-bert-2")
 
 from transformers import AutoProcessor, AutoModel
 
-from models.tts.text2semantic.t2s_model import T2SLlama
-from models.tts.text2semantic.t2s_model_new import T2SLlama_new
-from models.tts.text2semantic.t2s_sft_dataset_new import DownsampleWithMask
+from amphion.models.tts.text2semantic.t2s_model import T2SLlama
+from amphion.models.tts.text2semantic.t2s_model_new import T2SLlama_new
+from amphion.models.tts.text2semantic.t2s_sft_dataset_new import DownsampleWithMask
 
 
 def new_g2p_(text, language):
@@ -596,9 +596,9 @@ from funasr import AutoModel
 import torch.nn.functional as F
 import torch
 
-from models.tts.soundstorm.try_inference_new import evaluation
-from models.tts.soundstorm.try_inference_new import evaluation_new
-from models.tts.soundstorm.try_inference_new import extract_emotion_similarity
+from amphion.models.tts.soundstorm.try_inference_new import evaluation
+from amphion.models.tts.soundstorm.try_inference_new import evaluation_new
+from amphion.models.tts.soundstorm.try_inference_new import extract_emotion_similarity
 
 prompt0_wav_path = "./speech_examples/87_SPEAKER01_2_part03_213.wav"
 prompt0_text = generate_text_data(prompt0_wav_path)[1]

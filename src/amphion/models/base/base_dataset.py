@@ -9,10 +9,10 @@ import torch.utils.data
 from torch.nn.utils.rnn import pad_sequence
 import librosa
 
-from utils.data_utils import *
-from processors.acoustic_extractor import cal_normalized_mel
-from text import text_to_sequence
-from text.text_token_collation import phoneIDCollation
+from amphion.utils.data_utils import *
+from amphion.processors.acoustic_extractor import cal_normalized_mel
+from amphion.text import text_to_sequence
+from amphion.text.text_token_collation import phoneIDCollation
 
 
 class BaseOfflineDataset(torch.utils.data.Dataset):

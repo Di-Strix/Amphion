@@ -11,10 +11,10 @@ from tqdm import tqdm
 import torch.nn as nn
 from collections import OrderedDict
 
-from models.svc.base import SVCInference
-from modules.encoder.condition_encoder import ConditionEncoder
-from models.svc.transformer.transformer import Transformer
-from models.svc.transformer.conformer import Conformer
+from amphion.models.svc.base import SVCInference
+from amphion.modules.encoder.condition_encoder import ConditionEncoder
+from amphion.models.svc.transformer.transformer import Transformer
+from amphion.models.svc.transformer.conformer import Conformer
 
 
 class TransformerInference(SVCInference):

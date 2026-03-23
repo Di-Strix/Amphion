@@ -12,12 +12,12 @@ import math
 import torchaudio
 import yaml
 
-from models.base.base_trainer import BaseTrainer
-from models.codec.melvqgan.melspec import MelSpectrogram
-from models.vc.autoregressive_transformer.ar_model import AutoregressiveTransformer
-from models.codec.kmeans.repcodec_model import RepCodec
-from models.codec.vevo.vevo_repcodec import VevoRepCodec
-from models.vc.base.vc_emilia_dataset import VCEmiliaDataset, VCCollator
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.codec.melvqgan.melspec import MelSpectrogram
+from amphion.models.vc.autoregressive_transformer.ar_model import AutoregressiveTransformer
+from amphion.models.codec.kmeans.repcodec_model import RepCodec
+from amphion.models.codec.vevo.vevo_repcodec import VevoRepCodec
+from amphion.models.vc.base.vc_emilia_dataset import VCEmiliaDataset, VCCollator
 
 import safetensors
 

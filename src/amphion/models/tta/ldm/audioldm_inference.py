@@ -12,9 +12,9 @@ import torch.nn as nn
 from collections import OrderedDict
 import json
 
-from models.tta.autoencoder.autoencoder import AutoencoderKL
-from models.tta.ldm.inference_utils.vocoder import Generator
-from models.tta.ldm.audioldm import AudioLDM
+from amphion.models.tta.autoencoder.autoencoder import AutoencoderKL
+from amphion.models.tta.ldm.inference_utils.vocoder import Generator
+from amphion.models.tta.ldm.audioldm import AudioLDM
 from transformers import T5EncoderModel, AutoTokenizer
 from diffusers import PNDMScheduler
 

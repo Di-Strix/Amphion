@@ -9,20 +9,20 @@ import json
 import time
 import torch
 import numpy as np
-from utils.util import Logger, ValueWindow
+from amphion.utils.util import Logger, ValueWindow
 from torch.utils.data import ConcatDataset, DataLoader
-from models.tts.base.tts_trainer import TTSTrainer
-from models.base.base_trainer import BaseTrainer
-from models.base.base_sampler import VariableSampler
-from models.tts.naturalspeech2.ns2_dataset import NS2Dataset, NS2Collator, batch_by_size
-from models.tts.naturalspeech2.ns2_loss import (
+from amphion.models.tts.base.tts_trainer import TTSTrainer
+from amphion.models.base.base_trainer import BaseTrainer
+from amphion.models.base.base_sampler import VariableSampler
+from amphion.models.tts.naturalspeech2.ns2_dataset import NS2Dataset, NS2Collator, batch_by_size
+from amphion.models.tts.naturalspeech2.ns2_loss import (
     log_pitch_loss,
     log_dur_loss,
     diff_loss,
     diff_ce_loss,
 )
 from torch.utils.data.sampler import BatchSampler, SequentialSampler
-from models.tts.naturalspeech2.ns2 import NaturalSpeech2
+from amphion.models.tts.naturalspeech2.ns2 import NaturalSpeech2
 from torch.optim import Adam, AdamW
 from torch.nn import MSELoss, L1Loss
 import torch.nn.functional as F
