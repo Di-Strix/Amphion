@@ -1,0 +1,36 @@
+[project]
+name = "Amphion"
+version = "0.1.0"
+description = "Amphion (/æmˈfaɪən/) is a toolkit for Audio, Music, and Speech Generation. Its purpose is to support reproducible research and help junior researchers and engineers get started in the field of audio, music, and speech generation research and development."
+readme = "README.md"
+license-files = ["LICENSE"]
+requires-python = ">=3.8,<3.11"
+dependencies = [
+    "accelerate>=0.24.1",
+    "diffusers>=0.2.2",
+    "einops>=0.4.1",
+    "fairseq>=0.12.2",
+    "huggingface-hub>=0.27.0",
+    "ipython>=7.16.3",
+    "json5>=0.9.16",
+    "lhotse>=1.20.0",
+    "librosa>=0.9.1",
+    "numpy>=1.19.5",
+    "openai-whisper>=20240927",
+    "praat-parselmouth>=0.4.4",
+    "pyworld>=0.3.4",
+    "ruamel-yaml>=0.18.6",
+    "safetensors>=0.4.2",
+    "setuptools<81",
+    "six>=1.17.0",
+    "soundfile>=0.13.1",
+    "torch>=2.0.1",
+    "torchaudio>=2.0.1",
+    "torchcrepe>=0.0.23",
+    "tqdm>=4.66.2",
+    "transformers>=4.41.2",
+]
+
+[build-system]
+requires = ["uv_build>=0.10.12,<0.11.0"]
+build-backend = "uv_build"
