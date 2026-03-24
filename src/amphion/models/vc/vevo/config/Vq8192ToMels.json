@@ -36,7 +36,7 @@
         },
         "cond_type": "hubert_codec",
         "cond_sample_rate": 16000,
-        "representation_stat_mean_var_path": "./models/vc/vevo/config/hubert_large_l18_mean_std.npz",
+        "representation_stat_mean_var_path": "./hubert_large_l18_mean_std.npz",
         "repcodec": {
             "codebook_size": 8192, // VQ Codebook Size
             "hidden_size": 1024, // Representations Dim

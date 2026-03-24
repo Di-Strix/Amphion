@@ -12,15 +12,21 @@ import safetensors
 import numpy as np
 import yaml
 from IPython.display import display, Audio
+from pathlib import Path
 
-from amphion.models.vc.flow_matching_transformer.fmt_model import FlowMatchingTransformer
-from amphion.models.vc.autoregressive_transformer.ar_model import AutoregressiveTransformer
+from amphion.models.vc.flow_matching_transformer.fmt_model import (
+    FlowMatchingTransformer,
+)
+from amphion.models.vc.autoregressive_transformer.ar_model import (
+    AutoregressiveTransformer,
+)
 from amphion.models.codec.kmeans.repcodec_model import RepCodec
 from amphion.models.codec.vevo.vevo_repcodec import VevoRepCodec
 from amphion.models.codec.melvqgan.melspec import MelSpectrogram
 from amphion.models.codec.amphion_codec.vocos import Vocos
 
 from amphion.utils.util import load_config
+from amphion.utils.path import resolve_path
 
 
 def g2p_(text, language):
@@ -60,14 +66,14 @@ def build_vqvae_model(repcodec_cfg, device):
 
 
 # Vevo VQ-VAE Tokenizer (pkl checkpoint)
-def load_vevo_vqvae_checkpoint(repcodec_cfg, device):
-    with open(repcodec_cfg.config_path) as fp:
+def load_vevo_vqvae_checkpoint(repcodec_cfg, device, basepath: Path = Path("")):
+    with open(resolve_path(basepath, repcodec_cfg.config_path)) as fp:
         conf = yaml.load(fp, Loader=yaml.FullLoader)
     vqvae = VevoRepCodec(**conf)
     vqvae.quantizer.initial()
     vqvae.eval()
 
-    pretrained_path = repcodec_cfg.pretrained_path
+    pretrained_path = str(resolve_path(basepath, repcodec_cfg.pretrained_path))
     if ".pkl" in pretrained_path:
         # Vevo paper
         vqvae.load_state_dict(
@@ -188,7 +194,8 @@ class VevoInferencePipeline:
         self.device = device
 
         if ar_cfg_path is not None and ar_ckpt_path is not None:
-            self.ar_cfg = load_config(ar_cfg_path)
+            self.ar_cfg_path = resolve_path(ar_cfg_path)
+            self.ar_cfg = load_config(self.ar_cfg_path)
             self.ar_model = load_checkpoint(
                 build_ar_model, self.ar_cfg, ar_ckpt_path, device
             )
@@ -197,27 +204,35 @@ class VevoInferencePipeline:
             self.ar_cfg = None
             self.ar_model = None
 
-        self.fmt_cfg = load_config(fmt_cfg_path)
+        self.fmt_cfg_path = resolve_path(fmt_cfg_path)
+        self.fmt_cfg = load_config(self.fmt_cfg_path)
         self.fmt_model = load_checkpoint(
             build_fmt_model, self.fmt_cfg, fmt_ckpt_path, device
         )
         print(f"#Params of Flow Matching model: {count_parameters(self.fmt_model)}")
 
-        self.vocoder_cfg = load_config(vocoder_cfg_path)
+        self.vocoder_cfg_path = resolve_path(vocoder_cfg_path)
+        self.vocoder_cfg = load_config(self.vocoder_cfg_path)
         self.mel_model = build_mel_model(self.vocoder_cfg, device)
         self.vocoder_model = load_checkpoint(
             build_vocoder_model, self.vocoder_cfg, vocoder_ckpt_path, device
         )
         print(f"#Params of Vocoder model: {count_parameters(self.vocoder_model)}")
 
-        self.content_tokenizer_ckpt_path = content_tokenizer_ckpt_path
-        self.content_style_tokenizer_ckpt_path = content_style_tokenizer_ckpt_path
+        self.content_tokenizer_ckpt_path = resolve_path(content_tokenizer_ckpt_path)
+        self.content_style_tokenizer_ckpt_path = resolve_path(content_style_tokenizer_ckpt_path)
         self.init_vqvae_tokenizer()
 
     def init_vqvae_tokenizer(self):
         ## HuBERT features extraction ##
         self.hubert_model = build_hubert_model(self.device)
-        stat = np.load(self.fmt_cfg.model.representation_stat_mean_var_path)
+
+        config_basepath = self.fmt_cfg_path.parent
+        representation_stat_mean_var_path = resolve_path(
+            config_basepath, self.fmt_cfg.model.representation_stat_mean_var_path
+        )
+        stat = np.load(representation_stat_mean_var_path)
+
         self.hubert_feat_norm_mean = torch.tensor(stat["mean"])
         self.hubert_feat_norm_std = torch.tensor(stat["std"])
 
@@ -234,6 +249,7 @@ class VevoInferencePipeline:
             self.content_tokenizer = load_vevo_vqvae_checkpoint(
                 self.ar_cfg.model.input_repcodec,
                 self.device,
+                self.ar_cfg_path.parent
             )
 
             print(
