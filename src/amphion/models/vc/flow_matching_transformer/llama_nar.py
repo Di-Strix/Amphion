@@ -11,7 +11,7 @@ import math
 
 from transformers.models.llama.modeling_llama import LlamaDecoderLayer
 from transformers.models.llama.modeling_llama import BaseModelOutputWithPast
-
+from transformers.models.llama.modeling_llama import LlamaRotaryEmbedding
 
 # sinusoidal positional encoding
 class SinusoidalPosEmb(nn.Module):
@@ -71,6 +71,7 @@ class LlamaNARDecoderLayer(LlamaDecoderLayer):
         past_key_value: Optional[Tuple[torch.Tensor]] = None,
         output_attentions: Optional[bool] = False,
         use_cache: Optional[bool] = False,
+        position_embeddings: Optional[Tuple[torch.Tensor, torch.Tensor]] = None,
     ) -> Tuple[
         torch.FloatTensor, Optional[Tuple[torch.FloatTensor, torch.FloatTensor]]
     ]:
@@ -95,14 +96,25 @@ class LlamaNARDecoderLayer(LlamaDecoderLayer):
         )
 
         # Self Attention
-        hidden_states, self_attn_weights, present_key_value = self.self_attn(
+        attn_outputs = self.self_attn(
             hidden_states=hidden_states,
             attention_mask=attention_mask,
             position_ids=position_ids,
             past_key_value=past_key_value,
             output_attentions=output_attentions,
             use_cache=use_cache,
+            position_embeddings=position_embeddings,
         )
+        hidden_states = attn_outputs[0]
+        
+        self_attn_weights = None
+        present_key_value = None
+        if output_attentions:
+            self_attn_weights = attn_outputs[1]        
+            present_key_value = attn_outputs[2]
+        else:
+            present_key_value = attn_outputs[1]
+
         hidden_states = residual + hidden_states
 
         # Fully Connected
@@ -138,20 +150,27 @@ class DiffLlama(LlamaModel):
     ):
         super().__init__(config)
 
+        attn_impl = getattr(config, "_attn_implementation", "eager")
+        layer_config = LlamaConfig(
+            hidden_size=hidden_size,
+            num_attention_heads=num_heads,
+            max_position_embeddings=4096,
+            intermediate_size=hidden_size * 4,
+            attn_implementation=attn_impl,
+        )
+        layer_config._attn_implementation = attn_impl
+
         self.layers = nn.ModuleList(
             [
                 LlamaNARDecoderLayer(
-                    LlamaConfig(
-                        hidden_size=hidden_size,
-                        num_attention_heads=num_heads,
-                        max_position_embeddings=4096,
-                        intermediate_size=hidden_size * 4,
-                    ),
+                    layer_config,
                     layer_idx=i,
                 )
                 for i in range(num_layers)
             ]
         )
+
+        self.rotary_emb = LlamaRotaryEmbedding(config=layer_config)
 
         self.norm = LlamaAdaptiveRMSNorm(hidden_size, dim_cond=hidden_size)
 
@@ -325,6 +344,8 @@ class DiffLlama(LlamaModel):
 
         all_layer_hidden_states = []
 
+        position_embeddings = self.rotary_emb(hidden_states, position_ids)
+
         for idx, decoder_layer in enumerate(self.layers):
             if output_hidden_states:
                 all_hidden_states += (hidden_states,)
@@ -359,6 +380,7 @@ class DiffLlama(LlamaModel):
                     output_attentions=output_attentions,
                     use_cache=use_cache,
                     cond_embedding=diffusion_step,
+                    position_embeddings=position_embeddings,
                 )
 
             hidden_states = layer_outputs[0]
