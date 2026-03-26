@@ -11,7 +11,6 @@ import torch
 from amphion.text.symbol_table import SymbolTable
 from amphion.text import text_to_sequence
 
-
 """
     TextToken: map text to id
 """

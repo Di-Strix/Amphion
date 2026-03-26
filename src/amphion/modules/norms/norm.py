@@ -15,7 +15,6 @@ from torch.nn import functional as F
 from amphion.modules.general.scaling import ActivationBalancer
 from amphion.modules.general.scaling import BasicNorm as _BasicNorm
 
-
 _shape_t = Union[int, List[int], torch.Size]
 
 

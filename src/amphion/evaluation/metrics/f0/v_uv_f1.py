@@ -12,7 +12,6 @@ import numpy as np
 from amphion.utils.util import JsonHParams
 from amphion.utils.f0 import get_f0_features_using_parselmouth
 
-
 ZERO = 1e-8
 
 

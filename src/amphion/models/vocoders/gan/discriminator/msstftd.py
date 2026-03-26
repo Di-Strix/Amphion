@@ -17,7 +17,6 @@ from einops import rearrange
 
 from amphion.modules.vocoder_blocks import *
 
-
 FeatureMapType = tp.List[torch.Tensor]
 LogitsType = torch.Tensor
 DiscriminatorOutput = tp.Tuple[tp.List[LogitsType], tp.List[FeatureMapType]]
