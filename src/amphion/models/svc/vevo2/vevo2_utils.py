@@ -30,6 +30,9 @@ from amphion.evaluation.metrics.f0.f0_corr import extract_f0_hz
 
 from transformers.utils import is_flash_attn_2_available
 
+from amphion.utils.path import resolve_path
+import amphion
+
 supported_flash_attn = False
 if not torch.cuda.is_available():
     print("No CUDA available")
@@ -296,7 +299,7 @@ class Vevo2InferencePipeline:
         )
         if self.use_normed_whisper:
             whisper_stats = torch.load(
-                self.fmt_cfg.model.coco.whisper_stats_path,
+                resolve_path(amphion.__path__[0], self.fmt_cfg.model.coco.whisper_stats_path),
                 map_location=self.device,
             )
             self.whisper_mean = whisper_stats["mean"]  # (1024,)
