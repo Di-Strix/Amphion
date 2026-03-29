@@ -28,7 +28,7 @@ dependencies = [
     "torchaudio>=2.0.1",
     "torchcrepe>=0.0.23",
     "tqdm>=4.66.2",
-    "transformers>=4.41.2",
+    "transformers>=4.48.0,<6.0.0",
 ]
 
 [build-system]
